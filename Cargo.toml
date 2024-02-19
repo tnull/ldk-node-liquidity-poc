@@ -1,0 +1,11 @@
+[package]
+name = "ldk-node-liquidity-poc"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+#ldk-node = { path = "../ldk-node" }
+#ldk-node = "0.1.0"
+ldk-node = { git = "https://github.com/tnull/ldk-node.git", rev = "7a64a767010ceeeed1714bccb81ccd009e039182" }
