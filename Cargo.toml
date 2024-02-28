@@ -8,4 +8,4 @@ edition = "2021"
 [dependencies]
 #ldk-node = { path = "../ldk-node" }
 #ldk-node = "0.1.0"
-ldk-node = { git = "https://github.com/tnull/ldk-node.git", rev = "7a64a767010ceeeed1714bccb81ccd009e039182" }
+ldk-node = { git = "https://github.com/lightningdevkit/ldk-node.git", rev = "afd67d65ece0572951f5865ad856729fb6edfbb4" }

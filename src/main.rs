@@ -17,15 +17,10 @@ fn main() {
 	builder.set_log_level(LogLevel::Gossip);
 	builder.set_esplora_server("https://mutinynet.com/api/".to_string());
 
-	//let cequals_lsp_node_id: PublicKey = "0371d6fd7d75de2d0372d03ea00e8bacdacb50c27d0eaea0a76a0622eff1f5ef2b".parse().unwrap();
-	//let cequals_lsp_address = "3.84.56.108:39735".parse().unwrap();
-	//let cequals_lsp_token = Some("".to_string());
-	//builder.set_liquidity_source_lsps2(cequals_lsp_address, cequals_lsp_node_id, cequals_lsp_token);
-
-	//let kuutamo_lsp_node_id: PublicKey = "02d8f8dca7dc6e9bff7068a8cd1e1e2b346890fe6f9b27d01f532a68261c355cd9".parse().unwrap();
-	//let kuutamo_lsp_address = "34.76.227.238:9234".parse().unwrap();
-	//let kuutamo_lsp_token = None;
-	//builder.set_liquidity_source_lsps2(kuutamo_lsp_address, kuutamo_lsp_node_id, kuutamo_lsp_token);
+	let lsp_node_id: PublicKey = "..".parse().unwrap();
+	let lsp_address = "..".parse().unwrap();
+	let lsp_token = Some("..".to_string());
+	builder.set_liquidity_source_lsps2(lsp_address, lsp_node_id, lsp_token);
 
 	let node = Arc::new(builder.build().unwrap());
 	node.start().unwrap();
