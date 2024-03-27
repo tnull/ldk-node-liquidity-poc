@@ -9,21 +9,24 @@ use ldk_node::bitcoin::Network;
 
 fn main() {
 	let mut config = Config::default();
-	config.network = Network::Signet;
+	config.network = Network::Testnet;
 	//config.trusted_peers_0conf = vec![lsp_node_id.clone()];
 
 	let mut builder = Builder::from_config(config);
 	builder.set_storage_dir_path("/tmp/ldk_node_poc/".to_string());
 	builder.set_log_level(LogLevel::Gossip);
-	builder.set_esplora_server("https://mutinynet.com/api/".to_string());
+	//builder.set_esplora_server("https://mutinynet.com/api/".to_string());
+	builder.set_esplora_server("https://mempool.space/testnet/api/".to_string());
 
-	let lsp_node_id: PublicKey = "..".parse().unwrap();
-	let lsp_address = "..".parse().unwrap();
-	let lsp_token = Some("..".to_string());
+	let lsp_node_id: PublicKey =
+		"025804d4431ad05b06a1a1ee41f22fefeb8ce800b0be3a92ff3b9f594a263da34e".parse().unwrap();
+	let lsp_address = "44.228.24.253:9735".parse().unwrap();
+	let lsp_token = None;
 	builder.set_liquidity_source_lsps2(lsp_address, lsp_node_id, lsp_token);
 
 	let node = Arc::new(builder.build().unwrap());
 	node.start().unwrap();
+	println!("Node ID: {}", node.node_id());
 
 	let event_node = Arc::clone(&node);
 	std::thread::spawn(move || loop {

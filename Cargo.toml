@@ -8,4 +8,5 @@ edition = "2021"
 [dependencies]
 #ldk-node = { path = "../ldk-node" }
 #ldk-node = "0.1.0"
-ldk-node = { git = "https://github.com/lightningdevkit/ldk-node.git", rev = "afd67d65ece0572951f5865ad856729fb6edfbb4" }
+#ldk-node = { git = "https://github.com/lightningdevkit/ldk-node.git", rev = "afd67d65ece0572951f5865ad856729fb6edfbb4" }
+ldk-node = { git = "https://github.com/tnull/ldk-node.git", branch = "2024-03-use-fixed-payload-liquidity" }
